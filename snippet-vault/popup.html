@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="popup.css"></head>
+<body>
+<header><img src="icons/icon48.png" width="22" height="22" alt=""><h1>Snippet Vault</h1></header>
+<input id="search" type="search" placeholder="Search snippets…">
+<ul id="list"></ul>
+<details id="add"><summary>+ New snippet</summary>
+  <input id="title" type="text" placeholder="Label" maxlength="80">
+  <textarea id="body" rows="4" placeholder="Snippet text…"></textarea>
+  <div class="row"><button id="save" class="primary">Save</button><button id="export">Export</button><button id="importBtn">Import</button><input type="file" id="file" accept="application/json" hidden></div>
+</details>
+<p id="msg"></p>
+<script src="popup.js"></script></body></html>

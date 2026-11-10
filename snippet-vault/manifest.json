@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Snippet Vault",
+  "version": "1.0.0",
+  "description": "Store reusable text snippets and paste them into any field with a click or a hotkey. Offline, no sync, no accounts.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": { "default_popup": "popup.html", "default_title": "Snippet Vault" },
+  "commands": { "_execute_action": { "suggested_key": { "default": "Alt+Shift+V" } } },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}
