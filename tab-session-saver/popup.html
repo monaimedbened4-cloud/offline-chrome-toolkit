@@ -1,0 +1,9 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="popup.css"></head>
+<body>
+<header><img src="icons/icon48.png" width="22" height="22" alt=""><h1>Tab Session Saver</h1></header>
+<div class="row"><input id="name" type="text" placeholder="Session name…" maxlength="60"><button id="save" class="primary">Save tabs</button></div>
+<div class="row small"><label><input type="checkbox" id="onlyCurrent" checked> current window only</label></div>
+<ul id="list"></ul>
+<footer><button id="export">Export JSON</button><button id="importBtn">Import JSON</button><input type="file" id="file" accept="application/json" hidden></footer>
+<p id="msg"></p>
+<script src="popup.js"></script></body></html>
