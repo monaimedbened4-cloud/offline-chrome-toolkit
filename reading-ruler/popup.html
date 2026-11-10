@@ -1,0 +1,13 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="popup.css"></head>
+<body>
+<header><img src="icons/icon48.png" width="22" height="22" alt=""><h1>Reading Ruler</h1></header>
+<label class="sw"><input type="checkbox" id="on"> <span>Ruler + focus dimming</span></label>
+<label>Ruler height <output id="hO"></output><input id="height" type="range" min="20" max="140" step="2"></label>
+<label>Dim strength <output id="dO"></output><input id="dim" type="range" min="0" max="0.9" step="0.05"></label>
+<hr>
+<label class="sw"><input type="checkbox" id="bigger"> <span>Bigger, looser text</span></label>
+<label>Text size <output id="fO"></output><input id="fs" type="range" min="100" max="180" step="5"></label>
+<label class="sw"><input type="checkbox" id="contrast"> <span>Boost contrast</span></label>
+<label>Contrast <output id="cO"></output><input id="ct" type="range" min="1" max="1.8" step="0.05"></label>
+<p class="m">Settings apply instantly to every open tab. Reload older tabs once after install.</p>
+<script src="popup.js"></script></body></html>

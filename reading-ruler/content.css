@@ -1,0 +1,4 @@
+#rr-ruler{position:fixed;left:0;width:100%;pointer-events:none;z-index:2147483646;background:rgba(108,140,255,.22);border-top:2px solid rgba(108,140,255,.9);border-bottom:2px solid rgba(108,140,255,.9);transition:top .04s linear}
+#rr-dim-top,#rr-dim-bot{position:fixed;left:0;width:100%;pointer-events:none;z-index:2147483645;background:rgba(0,0,0,var(--rr-dim,.55))}
+html.rr-bigger-text body{font-size:var(--rr-fs,110%) !important;line-height:1.75 !important}
+html.rr-contrast{filter:contrast(var(--rr-ct,1.15))}
