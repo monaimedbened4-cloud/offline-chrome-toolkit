@@ -1,0 +1,39 @@
+name: Package extensions
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate manifests (MV3, valid JSON)
+        run: |
+          python3 - <<'PY'
+          import json, glob, sys
+          for f in glob.glob('*/manifest.json'):
+              m = json.load(open(f))
+              assert m['manifest_version'] == 3, f + ' is not Manifest V3'
+              assert m.get('name') and m.get('version'), f + ' missing name/version'
+              print('ok', f, m['name'], m['version'])
+          PY
+
+      - name: Assert the toolkit stays offline
+        run: |
+          if grep -rnE "fetch\(|XMLHttpRequest" --include="*.js" . ; then
+            echo "Found a network call - this toolkit must stay offline."; exit 1
+          fi
+          echo "No network calls found."
+
+      - name: Build ZIPs
+        run: bash scripts/build.sh
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: extension-zips
+          path: dist/*.zip
